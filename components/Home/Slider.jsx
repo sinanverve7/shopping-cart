@@ -14,7 +14,7 @@ export default function Slider() {
     const querySnapshot = await getDocs(q);
     const sliders = [];
     querySnapshot.forEach((doc) => {
-      sliders.push(doc.data());
+      sliders.push({ id: doc?.id, ...doc.data() });
     });
     setSliderList(sliders);
   };
@@ -25,13 +25,16 @@ export default function Slider() {
           fontFamily: "outfit-bold",
           fontSize: 20,
           padding: 20,
+          paddingLeft: 20,
+          paddingTop: 20,
+          marginBottom: 5,
         }}
       >
         #Special for you
       </Text>
       <FlatList
         data={sliderList}
-        style={{paddingLeft:20}}
+        style={{ paddingLeft: 20 }}
         showsHorizontalScrollIndicator={false}
         horizontal={true}
         keyExtractor={(item, index) => index.toString()}
@@ -41,8 +44,8 @@ export default function Slider() {
             style={{
               width: 300,
               height: 150,
-              borderRadius:15,
-              marginRight:15
+              borderRadius: 15,
+              marginRight: 15,
             }}
           />
         )}

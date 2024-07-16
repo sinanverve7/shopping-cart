@@ -1,16 +1,22 @@
-import { StyleSheet, Text, View } from "react-native";
-import React from "react";
-import Header from './../../components/Home/Header'
+import React, { useEffect } from "react";
+import { StyleSheet, View, ScrollView } from "react-native";
+import Categroy from "../../components/Home/Categroy";
+import PopularBusiness from "../../components/Home/PopularBusiness";
 import Slider from "../../components/Home/Slider";
+import Header from "./../../components/Home/Header";
 
 const home = () => {
   return (
-    <View>
+    <ScrollView>
       {/* Header */}
       <Header />
       {/* Slider */}
       <Slider />
-    </View>
+      {/* Category */}
+      <Categroy />
+      {/* Popular business list */}
+      <PopularBusiness />
+    </ScrollView>
   );
 };
 
