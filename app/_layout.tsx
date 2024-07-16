@@ -40,7 +40,6 @@ export default function RootLayout() {
     "outfit-bold": require("./../assets/fonts/Outfit-Bold.ttf"),
   });
   const publishableKey = process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY!;
-  // const { user } = useUser();
   return (
     <ClerkProvider publishableKey={publishableKey} tokenCache={tokenCache}>
       <ClerkLoaded>

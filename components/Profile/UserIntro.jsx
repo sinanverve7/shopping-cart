@@ -6,17 +6,28 @@ export default function UserIntro() {
   const { user } = useUser();
 
   return (
-    <View>
+    <View
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        marginTop: 15,
+      }}
+    >
       <Image
         source={{ uri: user?.imageUrl }}
         style={{
           width: 100,
           height: 100,
-          borderRadius:99,
-
+          borderRadius: 99,
         }}
       />
-      <Text>UserIntro</Text>
+      <Text style={{ fontFamily: "outfit-bold", fontSize: 20 }}>
+        {user?.fullName ? user?.fullName : "John Doe"}
+      </Text>
+      <Text style={{ fontFamily: "outfit", fontSize: 16 }}>
+        {user?.primaryEmailAddress?.emailAddress}
+      </Text>
     </View>
   );
 }

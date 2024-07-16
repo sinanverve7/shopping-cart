@@ -38,6 +38,7 @@ export default function BusinessListByCategory() {
     });
     setBusinessList(list);
     setLoading(false);
+    console.log(list);
   };
   return (
     <View>

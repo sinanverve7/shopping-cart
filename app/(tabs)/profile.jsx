@@ -2,7 +2,7 @@ import { StyleSheet, Text, View } from "react-native";
 import React, { useEffect } from "react";
 import UserIntro from "../../components/Profile/UserIntro";
 import { useNavigation } from "expo-router";
-
+import MenuList from "../../components/Profile/MenuList";
 
 const profile = () => {
   const navigation = useNavigation();
@@ -10,8 +10,7 @@ const profile = () => {
     navigation.setOptions({
       headerShown: true,
       headerBackTitleVisible: false,
-      headerTitle: 'Profile',
-      
+      headerTitle: "Profile",
     });
   });
   return (
@@ -19,6 +18,7 @@ const profile = () => {
       {/* user info */}
       <UserIntro />
       {/* Action buttons */}
+      <MenuList />
     </View>
   );
 };
